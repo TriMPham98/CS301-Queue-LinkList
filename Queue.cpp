@@ -10,7 +10,8 @@ Queue<T>::Queue()
 template<class T>
 Queue<T>::Queue(int max)
 {
-
+    head = nullptr;
+    tail = nullptr;
 }
 
 template<class T>
