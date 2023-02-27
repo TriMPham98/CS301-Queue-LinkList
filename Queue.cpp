@@ -29,13 +29,19 @@ void Queue<T>::MakeEmpty() {
 
 template<class T>
 bool Queue<T>::IsEmpty() const {
-    return false;
+    return head == nullptr;
 }
 
 template<class T>
 bool Queue<T>::IsFull() const
 // Returns true if the queue is full; false otherwise.
 {
+    try {
+        Node *temp = new Node;
+        delete temp;
+    } catch (std::bad_alloc error) {
+        return true;
+    }
     return false;
 }
 
