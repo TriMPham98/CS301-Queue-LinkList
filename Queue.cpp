@@ -64,5 +64,17 @@ void Queue<T>::Enqueue(T newItem) {
 
 template<class T>
 T Queue<T>::Dequeue() {
-    return T();
+    if (IsEmpty()) {
+        throw EmptyQueue();
+    }
+    else {
+        Node* temp = head;
+        T item = head->value;
+        head = head->next;
+        if (head == nullptr) {
+            tail = nullptr;
+        }
+        delete temp;
+        return item;
+    }
 }
