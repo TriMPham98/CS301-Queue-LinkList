@@ -1,14 +1,13 @@
 #include "Queue.h"
 
-
 template<class T>
-Queue<T>::Queue(int max)
+Queue<T>::Queue()
 {
 
 }
 
 template<class T>
-Queue<T>::Queue()
+Queue<T>::Queue(int max)
 {
 
 }
