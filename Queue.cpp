@@ -49,17 +49,16 @@ template<class T>
 void Queue<T>::Enqueue(T newItem) {
     if (IsFull()) {
         throw FullQueue();
-    } else {
-        Node *newNode = new Node;
-        newNode->value = newItem;
-        newNode->next = nullptr;
-        if (head == nullptr) {
-            head = newNode;
-        } else {
-            tail->next = newNode;
-        }
-        tail = newNode;
     }
+    Node *newNode = new Node;
+    newNode->value = newItem;
+    newNode->next = nullptr;
+    if (head == nullptr) {
+        head = newNode;
+    } else {
+        tail->next = newNode;
+    }
+    tail = newNode;
 }
 
 template<class T>
@@ -67,14 +66,12 @@ T Queue<T>::Dequeue() {
     if (IsEmpty()) {
         throw EmptyQueue();
     }
-    else {
-        Node* temp = head;
-        T item = head->value;
-        head = head->next;
-        if (head == nullptr) {
-            tail = nullptr;
-        }
-        delete temp;
-        return item;
+    Node *temp = head;
+    T item = head->value;
+    head = head->next;
+    if (head == nullptr) {
+        tail = nullptr;
     }
+    delete temp;
+    return item;
 }
