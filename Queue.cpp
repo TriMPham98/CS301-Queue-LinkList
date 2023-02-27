@@ -3,7 +3,8 @@
 template<class T>
 Queue<T>::Queue()
 {
-
+    head = nullptr;
+    tail = nullptr;
 }
 
 template<class T>
